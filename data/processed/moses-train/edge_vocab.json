@@ -1,0 +1,7 @@
+{
+    "[MASK]": 0,
+    "SINGLE": 1,
+    "DOUBLE": 2,
+    "TRIPLE": 3,
+    "AROMATIC": 4
+}

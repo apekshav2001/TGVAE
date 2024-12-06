@@ -1,0 +1,26 @@
+{
+    "train": "moses-train",
+    "test": "moses-test",
+    "d_model": [
+        512,
+        512
+    ],
+    "d_ff": 1024,
+    "n_layer": [
+        8,
+        8
+    ],
+    "n_head": [
+        1,
+        16
+    ],
+    "dropout": 0.5,
+    "batch": 128,
+    "edge_dim": null,
+    "encoder_mode": "none",
+    "pool_mode": "add",
+    "gnn_mode": "res+",
+    "clip": 5,
+    "name": "experiment_1",
+    "epoch": 0
+}

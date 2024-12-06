@@ -1,10 +1,9 @@
-import argparse 
-import json 
+import argparse
 import torch
 import os
-from model.main import TGVAE
-from tqdm import tqdm 
-from helper.utils import get_mask, read_genmol, write_genmol, load_file
+from main import TGVAE
+from tqdm import tqdm
+from utils import get_mask, read_genmol, write_genmol, load_file
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 parser = argparse.ArgumentParser()
@@ -19,10 +18,10 @@ processed_folder = 'data/processed'
 output_folder = f'output/generate/{arg.name}'
 
 config = load_file(f'{model_folder}/config.json')
-node_vocab = load_file(f'{processed_folder}/{config['train']}/node_vocab.json')
-edge_vocab = load_file(f'{processed_folder}/{config['train']}/edge_vocab.json')
-smi_vocab = load_file(f'{processed_folder}/{config['train']}/smi_vocab.json')
-maxlen = load_file(f'{processed_folder}/{config['train']}/max_len.pt')
+node_vocab = load_file(f'{processed_folder}/{config["train"]}/node_vocab.json')
+edge_vocab = load_file(f'{processed_folder}/{config["train"]}/edge_vocab.json')
+smi_vocab = load_file(f'{processed_folder}/{config["train"]}/smi_vocab.json')
+maxlen = load_file(f'{processed_folder}/{config["train"]}/max_len.pt')
 inv_smi_vocab = {v:k for k,v in smi_vocab.items()}
 
 
